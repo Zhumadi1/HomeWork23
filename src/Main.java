@@ -4,23 +4,20 @@ public class Main {
     public static void main(String[] args) {
         Random random = new Random();
         int[] sortArr = new int[10];
-        for (int i = 0; i < sortArr.length; i++) {
-            sortArr[i] = random.nextInt(2);
-        }
         LinkedList<Integer> list = new LinkedList<>();
         ArrayList<Integer> arrayList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < sortArr.length; i++) {
+            sortArr[i] = random.nextInt(2);
+            arrayList.add(random.nextInt(2));
             list.add(random.nextInt(2));
         }
-        for (int i = 0; i < 10; i++) {
-            arrayList.add(random.nextInt(2));
-        }
+
         System.out.println(Arrays.toString(sort(sortArr)));
         System.out.println(sort(arrayList));
         System.out.println(sort(list));
 
     }
-    
+
     public static int[] sort(int[] sortArr) {
         int j;
         for (int i = 1; i < sortArr.length; i++) {
